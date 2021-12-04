@@ -1,0 +1,22 @@
+#!/bin/bash
+
+dir=$(date +"%Y/%d")
+
+mkdir -p $dir
+
+cat > $dir/1.py << EOF
+#!/bin/python
+
+# ======== setup ===========
+
+data = open("data").read().split('\n')
+
+# ======== code =======
+
+EOF
+
+chmod +x $dir/1.py
+cp $dir/1.py $dir/2.py
+touch $dir/data
+
+cd $dir
