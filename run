@@ -18,5 +18,3 @@ EOF
 chmod +x $dir/1.py
 cp $dir/1.py $dir/2.py
 touch $dir/data
-
-cd $dir
