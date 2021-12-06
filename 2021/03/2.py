@@ -2,7 +2,8 @@
 
 # ======== setup ===========
 
-data = open("data", "r").read().split("\n")
+import sys
+data = open(sys.path[0] + "/data").read().split('\n')
 
 # ======== code =======
 
@@ -13,7 +14,7 @@ for i in range(len(data[0])):
 
 o2 = int(data[0], 2)
 
-data = open("data", "r").read().split("\n")
+data = open(sys.path[0] + "/data").read().split('\n')
 for i in range(len(data[0])):
     if len(data) == 1: break
     x = sum([int(data[j][i]) for j in range(len(data))], 0)

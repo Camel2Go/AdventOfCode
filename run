@@ -1,20 +1,29 @@
 #!/bin/bash
 
-dir=$(date +"%Y/%d")
-
-mkdir -p $dir
-
-cat > $dir/1.py << EOF
+# default
+if [ -z "$1" ]; then
+    dir=$(date +"%Y/%d")
+    mkdir -p $dir
+    cat > $dir/idk.py << EOF
 #!/bin/python
 
 # ======== setup ===========
-
-data = open("data").read().split('\n')
+import sys
+data = open(sys.path[0] + "/data").read().split('\n')
 
 # ======== code =======
 
 EOF
+    chmod +x $dir/idk.py
+    touch $dir/idk
+fi
 
-chmod +x $dir/1.py
-cp $dir/1.py $dir/2.py
-touch $dir/data
+# timings
+if [ "$1" = "t" ]; then
+    for file in $(find -name *.py)
+    do
+        echo
+        echo "testing $file"
+        time $file > /dev/null
+    done
+fi
