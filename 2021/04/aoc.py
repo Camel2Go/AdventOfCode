@@ -36,14 +36,7 @@ def run(boards, numbers, win=True):
 
 
 numbers = data[0].split(',')
-boards = []
-board = []
-for line in data[2:]:
-    if not line: 
-        boards.append(board)
-        board = []
-    else:
-        board.append(line.strip().replace("  ", ' ').split(' '))
+boards = [[line.strip().replace("  ", ' ').split(' ') for line in data[i:i+5]] for i in range(2, len(data), 6)]
 
 print(run(boards, numbers))
 print(run(boards, numbers, False))

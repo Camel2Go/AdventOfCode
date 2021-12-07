@@ -4,7 +4,7 @@
 if [ -z "$1" ]; then
     dir=$(date +"%Y/%d")
     mkdir -p $dir
-    cat > $dir/idk.py << EOF
+    cat > $dir/aoc.py << EOF
 #!/bin/python
 
 # ======== setup ===========
@@ -14,8 +14,8 @@ data = open(sys.path[0] + "/data").read().split('\n')
 # ======== code =======
 
 EOF
-    chmod +x $dir/idk.py
-    touch $dir/idk
+    chmod +x $dir/aoc.py
+    touch $dir/data
 fi
 
 # timings
