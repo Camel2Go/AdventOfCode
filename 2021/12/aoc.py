@@ -6,7 +6,7 @@ data = open(sys.path[0] + "/data").read().split('\n')
 
 # ======== code =======
 
-def run(x: str, traversed: list, twice=False) -> list:
+def run(x: str, traversed: list, twice=False) -> int:
     if x == "end": return 1 
     if x.islower() and x in traversed:
         if not twice or x == "start": return 0
