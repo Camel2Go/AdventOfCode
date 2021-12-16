@@ -8,11 +8,16 @@ if [ -z "$1" ]; then
 #!/bin/python
 
 # ======== setup ===========
+
+from time import time
 import sys
+start = time()
 data = open(sys.path[0] + "/data").read().split('\n')
 
 # ======== code =======
 
+
+print(f"\n===== {time() - start} sec =====")
 EOF
     chmod +x $dir/aoc.py
     touch $dir/data
