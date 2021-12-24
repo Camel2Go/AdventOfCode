@@ -20,7 +20,7 @@ def convert(n: str) -> list:
     x = 0
     for i in range(1, len(n)):
         x += (n[i] == '[') - (n[i] == ']')
-        if n[i] == ',' and not x:
+        if not x and n[i] == ',':
             return [convert(n[1:i]), convert(n[i + 2:-1])]
 
 def unwind(n) -> list:
