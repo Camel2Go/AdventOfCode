@@ -1,7 +1,6 @@
 #!/bin/python
 
 # ======== setup ===========
-import difflib
 data = open("08.data").read().split('\n')
 
 # ======== code =======
