@@ -4,7 +4,7 @@ use itertools::Itertools;
 
 fn main() {
 
-	let data = fs::read_to_string("data/02").expect("Error while reading data");
+	let data = fs::read_to_string("data/02").expect("Error reading data");
 
 	let now = Instant::now();
 	
