@@ -14,17 +14,18 @@ fn main() {
 
 fn run(data: &String, part1: bool) -> usize {
 
-	let mut elves: Vec<usize> = Vec::new();
-	let mut calories = 0;
+	// let mut elves: Vec<usize> = Vec::new();
+	// let mut calories = 0;
+	// for food in data.split("\n").collect::<Vec<&str>>() {
+	// 	if food == "" {
+	// 		elves.push(calories);
+	// 		calories = 0;
+	// 	} else {
+	// 		calories += food.parse::<usize>().unwrap();
+	// 	}
+	// }
 
-	for food in data.split("\n").collect::<Vec<&str>>() {
-		if food == "" {
-			elves.push(calories);
-			calories = 0;
-		} else {
-			calories += food.parse::<usize>().unwrap();
-		}
-	}
+	let mut elves: Vec<usize> = data.split("\n\n").into_iter().map(|elve| elve.split("\n").into_iter().map(|x| x.parse::<usize>().unwrap()).sum()).collect();
 
 	elves.sort();
 
