@@ -8,7 +8,7 @@ use cute::c;
 
 fn main() {
 
-	let data = fs::read_to_string("data/idk").expect("Error while reading data");
+	let data = fs::read_to_string("data/08").expect("Error while reading data");
 
 	let mut time = Instant::now();
 
