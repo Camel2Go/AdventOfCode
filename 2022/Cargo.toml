@@ -10,3 +10,4 @@ debug = true
 itertools = "0.10.3"
 cute = "0.3.0"
 regex = "1"
+json = "0.12.4"
